@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-one
+data:
+  index.html: |
+    <html>
+    <head><title>Level Up!</title></head>
+    <body/>
+    <h1>This is Deployment One.</h1>
+    </body></html>
+  
