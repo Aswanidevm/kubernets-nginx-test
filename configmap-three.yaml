@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-three
+data:
+  index.html: |
+    <html>
+    <head><title>Level Up!</title></head>
+    <body/>
+    <h1>This is Deployment Three.</h1>
+    </body></html>
+  

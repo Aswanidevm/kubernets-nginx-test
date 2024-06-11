@@ -53,3 +53,33 @@ spec:
       - name: config-2
         configMap:
           name: configmap-two
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-three
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports: 
+          - containerPort: 80
+        volumeMounts:
+        - name: config-1
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: config-1
+        configMap:
+          name: configmap-three
