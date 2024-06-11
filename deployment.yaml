@@ -4,7 +4,7 @@ metadata:
   name: deployment-one
   namespace: demo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -32,8 +32,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-two
+  namespace: demo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -62,8 +63,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-three
+  namespace: demo
 spec:
-  replicas: 3
+  replicas: 
   selector:
     matchLabels:
       app: nginx
