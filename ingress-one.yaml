@@ -12,7 +12,7 @@ spec:
         path: "/nginx1service"
         backend:
           service:
-            name: nginx1service.demo.svc.cluster.local
+            name: nginx1service
             port:
               number: 80
   - host: "nginxservice2.com"
@@ -22,7 +22,7 @@ spec:
         path: "/nginx2service"
         backend:
           service:
-            name: nginx2service.demo.svc.cluster.local
+            name: nginx2service
             port:
               number: 80
   - host: "nginxservice3.com"
@@ -32,6 +32,6 @@ spec:
         path: "/nginx3service"
         backend:
           service:
-            name: nginx3service.demo.svc.cluster.local
+            name: nginx3service
             port:
               number: 80
