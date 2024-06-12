@@ -8,34 +8,34 @@ spec:
   - name: example-gateway
     kind: Gateway
   hostnames:
-  - "nginx-service1.com"
+  - "nginxservice1.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx1-service
+        value: /nginx1service
     backendRefs:
-    - name: nginx1-service.demo.svc.cluster.local
+    - name: nginx1service.demo.svc.cluster.local
       kind: Service
       port: 80
   hostnames:
-  - "nginx-service2.com"
+  - "nginxservice2.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx2-service
+        value: /nginx2service
     backendRefs:
-    - name: nginx2-service.demo.svc.cluster.local
+    - name: nginx2service.demo.svc.cluster.local
       port: 80
   hostnames:
-  - "nginx-service3.com"
+  - "nginxservice3.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx3-service
+        value: /nginx3service
     backendRefs:
-    - name: nginx3-service.demo.svc.cluster.local
+    - name: nginx3service.demo.svc.cluster.local
       kind: Service
       port: 80
