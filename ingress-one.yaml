@@ -4,33 +4,33 @@ metadata:
   name: ingress-wildcard-host
 spec:
   rules:
-  - host: "foo.bar.com"
+  - host: "nginx-service1"
     http:
       paths:
       - pathType: Prefix
-        path: "/bar"
+        path: "/"
         backend:
           service:
-            name: service1
+            name: nginx1-service.demo.svc.cluster.local
             port:
               number: 80
-  - host: "*.foo.com"
+  - host: "nginx-service1"
     http:
       paths:
       - pathType: Prefix
-        path: "/foo"
+        path: "/"
         backend:
           service:
-            name: service2
+            name: nginx2-service.demo.svc.cluster.local
             port:
               number: 80
     - host: "foo.bar.com"
       http:
         paths:
         - pathType: Prefix
-          path: "/bar"
+          path: "/"
           backend:
             service:
-              name: service1
+              name: nginx2-service.demo.svc.cluster.local
               port:
                 number: 80
