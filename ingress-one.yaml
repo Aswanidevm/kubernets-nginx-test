@@ -33,5 +33,5 @@ spec:
         backend:
           service:
             name: nginx3-service.demo.svc.cluster.local
-              port:
-                number: 80
+            port:
+              number: 80
