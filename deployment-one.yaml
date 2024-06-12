@@ -52,10 +52,11 @@ metadata:
   labels :
     app: nginx
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: nginx
   ports:
     - name: my-service
+      protocol: TCP
       port: 80
       targetPort: 80
