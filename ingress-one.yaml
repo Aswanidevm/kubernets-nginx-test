@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-wildcard-host
+  name: ingress-nginx
+  namespace: demo
 spec:
   rules:
   - host: "nginx-service1"
@@ -14,7 +15,7 @@ spec:
             name: nginx1-service.demo.svc.cluster.local
             port:
               number: 80
-  - host: "nginx-service2"
+  - host: "nginx-service"
     http:
       paths:
       - pathType: Prefix
@@ -31,6 +32,6 @@ spec:
           path: "/"
           backend:
             service:
-              name: nginx2-service.demo.svc.cluster.local
+              name: nginx3-service.demo.svc.cluster.local
               port:
                 number: 80
