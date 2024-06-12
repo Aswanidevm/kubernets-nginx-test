@@ -9,7 +9,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/nginx1-service"
         backend:
           service:
             name: nginx1-service.demo.svc.cluster.local
@@ -19,7 +19,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/nginx2-service"
         backend:
           service:
             name: nginx2-service.demo.svc.cluster.local
@@ -29,7 +29,7 @@ spec:
       http:
         paths:
         - pathType: Prefix
-          path: "/"
+          path: "/nginx3-service"
           backend:
             service:
               name: nginx3-service.demo.svc.cluster.local

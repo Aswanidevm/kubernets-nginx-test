@@ -6,33 +6,36 @@ metadata:
 spec:
   parentRefs:
   - name: example-gateway
+    kind: Gateway
   hostnames:
   - "nginx-service1.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /login
+        value: /nginx1-service
     backendRefs:
     - name: nginx1-service.demo.svc.cluster.local
-      port: 8080
+      kind: Service
+      port: 80
   hostnames:
   - "nginx-service2.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /login
+        value: /nginx2-service
     backendRefs:
     - name: nginx2-service.demo.svc.cluster.local
-      port: 8080
+      port: 80
   hostnames:
   - "nginx-service3.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /login
+        value: /nginx3-service
     backendRefs:
     - name: nginx3-service.demo.svc.cluster.local
+      kind: Service
       port: 80
