@@ -25,13 +25,13 @@ spec:
             name: nginx2-service.demo.svc.cluster.local
             port:
               number: 80
-    - host: "nginx-service3.com"
-      http:
-        paths:
-        - pathType: Prefix
-          path: "/nginx3-service"
-          backend:
-            service:
-              name: nginx3-service.demo.svc.cluster.local
+  - host: "nginx-service3.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/nginx3-service"
+        backend:
+          service:
+            name: nginx3-service.demo.svc.cluster.local
               port:
-                number: 80
+              number: 80
