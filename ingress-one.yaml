@@ -9,7 +9,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/nginx1service"
+        path: /
         backend:
           service:
             name: nginx1service
@@ -19,7 +19,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/nginx2service"
+        path: /
         backend:
           service:
             name: nginx2service
@@ -29,7 +29,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/nginx3service"
+        path: /
         backend:
           service:
             name: nginx3service
