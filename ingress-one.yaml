@@ -5,7 +5,7 @@ metadata:
   namespace: demo
 spec:
   rules:
-  - host: "nginx-service1"
+  - host: "nginx-service1.com"
     http:
       paths:
       - pathType: Prefix
@@ -15,7 +15,7 @@ spec:
             name: nginx1-service.demo.svc.cluster.local
             port:
               number: 80
-  - host: "nginx-service"
+  - host: "nginx-service2.com"
     http:
       paths:
       - pathType: Prefix
@@ -25,7 +25,7 @@ spec:
             name: nginx2-service.demo.svc.cluster.local
             port:
               number: 80
-    - host: "nginx-service3"
+    - host: "nginx-service3.com"
       http:
         paths:
         - pathType: Prefix

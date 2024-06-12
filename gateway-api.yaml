@@ -7,7 +7,7 @@ spec:
   parentRefs:
   - name: example-gateway
   hostnames:
-  - "www.example.com"
+  - "nginx-service1.com"
   rules:
   - matches:
     - path:
@@ -17,7 +17,7 @@ spec:
     - name: nginx1-service.demo.svc.cluster.local
       port: 8080
   hostnames:
-  - "www.example.com"
+  - "nginx-service2.com"
   rules:
   - matches:
     - path:
@@ -27,7 +27,7 @@ spec:
     - name: nginx2-service.demo.svc.cluster.local
       port: 8080
   hostnames:
-  - "www.example.com"
+  - "nginx-service3.com"
   rules:
   - matches:
     - path:
