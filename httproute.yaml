@@ -17,7 +17,7 @@ spec:
     backendRefs:
     - name: nginx1service
       kind: Service
-      port: 80
+      port: 7070
     - path:
         type: PathPrefix
         value: /two
