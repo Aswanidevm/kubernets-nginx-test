@@ -7,8 +7,8 @@ spec:
   parentRefs:
   - name: bavrio-ext-reg-httpgw
     namespace: demo
-  # hostnames:
-  # - "nginxservice1.com"
+  hostnames:
+  - "nginxservice1.com"
   rules:
   - matches:
     - path:
@@ -18,13 +18,13 @@ spec:
     - name: nginx1service
       kind: Service
       port: 7070
-    - path:
-        type: PathPrefix
-        value: /two
-    backendRefs:
-    - name: nginx2service
-      kind: Service
-      port: 8080
+    # - path:
+    #     type: PathPrefix
+    #     value: /two
+    # backendRefs:
+    # - name: nginx2service
+    #   kind: Service
+    #   port: 8080
 
   # hostnames:
   # - "nginxservice2.com"
