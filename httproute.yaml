@@ -18,6 +18,13 @@ spec:
     - name: nginx1service
       kind: Service
       port: 80
+    - path:
+        type: PathPrefix
+        value: /two
+    backendRefs:
+    - name: nginx2service
+      kind: Service
+      port: 8080
 
   # hostnames:
   # - "nginxservice2.com"
