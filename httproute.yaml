@@ -1,21 +1,20 @@
 apiVersion: gateway.networking.k8s.io/v1
-kind: Gateway
+kind: HTTPRoute
 metadata:
   name: nginx
   namespace: demo
 spec:
   parentRefs:
-  - name: example-gateway
-    kind: Gateway
+  - name: my-gateway
   hostnames:
   - "nginxservice1.com"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx1service
+        value: /
     backendRefs:
-    - name: nginx1service.demo.svc.cluster.local
+    - name: nginx1service
       kind: Service
       port: 80
   hostnames:
@@ -24,9 +23,9 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx2service
+        value: /
     backendRefs:
-    - name: nginx2service.demo.svc.cluster.local
+    - name: nginx2service
       port: 80
   hostnames:
   - "nginxservice3.com"
@@ -34,8 +33,8 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /nginx3service
+        value: /
     backendRefs:
-    - name: nginx3service.demo.svc.cluster.local
+    - name: nginx3service
       kind: Service
       port: 80
