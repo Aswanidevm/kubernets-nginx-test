@@ -6,7 +6,7 @@ metadata:
 spec:
   parentRefs:
   - name: bavrio-ext-reg-httpgw
-    namespace: default
+    # namespace: default
   hostnames:
   - "nginxservice1.com"
   rules:
