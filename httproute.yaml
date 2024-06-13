@@ -13,7 +13,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /login
+        value: /
     backendRefs:
     - name: nginx1service
       kind: Service
