@@ -1,5 +1,6 @@
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
+namespace: demo
 metadata:
   name: bavrio-ext-reg-httpgw
 spec:
