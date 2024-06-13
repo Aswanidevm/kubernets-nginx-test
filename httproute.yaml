@@ -5,7 +5,7 @@ metadata:
   namespace: demo
 spec:
   parentRefs:
-  - name: my-gateway
+  - name: bavrio-ext-reg-httpgw
     namespace: default
   hostnames:
   - "nginxservice1.com"
