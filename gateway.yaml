@@ -1,8 +1,8 @@
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
-namespace: demo
 metadata:
   name: bavrio-ext-reg-httpgw
+  namespace: demo
 spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
@@ -12,6 +12,6 @@ spec:
     allowedRoutes:
       kinds:
       - kind: HTTPRoute
-  addresses:
-  - type: NamedAddress
-    value: bavrio-ip
+  # addresses:
+  # - type: NamedAddress
+  #   value: bavrio-ip
