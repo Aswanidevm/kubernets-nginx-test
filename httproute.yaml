@@ -17,24 +17,24 @@ spec:
     - name: nginx1service
       kind: Service
       port: 80
-  hostnames:
-  - "nginxservice2.com"
-  rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: nginx2service
-      port: 80
-  hostnames:
-  - "nginxservice3.com"
-  rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: nginx3service
-      kind: Service
-      port: 80
+  # hostnames:
+  # - "nginxservice2.com"
+  # rules:
+  # - matches:
+  #   - path:
+  #       type: PathPrefix
+  #       value: /
+  #   backendRefs:
+  #   - name: nginx2service
+  #     port: 80
+  # hostnames:
+  # - "nginxservice3.com"
+  # rules:
+  # - matches:
+  #   - path:
+  #       type: PathPrefix
+  #       value: /
+  #   backendRefs:
+  #   - name: nginx3service
+  #     kind: Service
+  #     port: 80
