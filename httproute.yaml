@@ -1,11 +1,12 @@
-apiVersion: gateway.networking.k8s.io/v1
+apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
   name: nginx-route
   namespace: demo
 spec:
   parentRefs:
-  - name: bavrio-ext-reg-httpgw
+  - kind: Gateway
+    name: test-ext-reg-httpgw
     namespace: demo
   hostnames:
   - "nginxservice1.com"
@@ -16,15 +17,47 @@ spec:
         value: /
     backendRefs:
     - name: nginx1service
-      kind: Service
-      port: 7070
-    # - path:
-    #     type: PathPrefix
-    #     value: /two
-    # backendRefs:
-    # - name: nginx2service
-    #   kind: Service
-    #   port: 8080
+      namespace: demo
+      port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /two
+    backendRefs:
+    - name: nginx2service
+      namespace: demo
+      port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /three
+    backendRefs:
+    - name: nginx3service
+      namespace: demo
+      port: 80
+
+  # hostnames:
+  # - "nginxservice2.com"
+  # rules:
+  # - matches:
+  #   - path:
+  #       type: PathPrefix
+  #       value: /
+  #   backendRefs:
+  #   - name: nginx2service
+  #     port: 80
+  # hostnames:
+  # - "nginxservice3.com"
+  # rules:
+  # - matches:
+  #   - path:
+  #       type: PathPrefix
+  #       value: /
+  #   backendRefs:
+  #   - name: nginx3service
+  #     kind: Service
+  #     port: 80
+
 
   # hostnames:
   # - "nginxservice2.com"

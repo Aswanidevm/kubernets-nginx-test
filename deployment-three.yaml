@@ -23,22 +23,22 @@ spec:
   replicas: 
   selector:
     matchLabels:
-      app: nginx
+      app: nginx3
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx3
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: nginx3
+        image: nginx3
         ports: 
-          - containerPort: 90
+          - containerPort: 80
         volumeMounts:
-        - name: config-1
-          mountPath: /usr/share/nginx/html
+        - name: config-3
+          mountPath: /usr/share/nginx/html/three
       volumes:
-      - name: config-1
+      - name: config-3
         configMap:
           name: configmap-three
 
@@ -50,13 +50,13 @@ metadata:
   name: nginx3service
   namespace: demo
   labels :
-    app: nginx
+    app: nginx3
 spec:
   type: ClusterIP
   selector:
-    app: nginx
+    app: nginx3
   ports:
     - name: myservice3
       protocol: TCP
-      port: 9090
-      targetPort: 90
+      port: 80
+      targetPort: 80

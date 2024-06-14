@@ -23,17 +23,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nginx1
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx1
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:latest
         ports: 
-          - containerPort: 70
+          - containerPort: 80
         volumeMounts:
         - name: config-1
           mountPath: /usr/share/nginx/html
@@ -50,13 +50,12 @@ metadata:
   name: nginx1service
   namespace: demo
   labels :
-    app: nginx
+    app: nginx1
 spec:
   type: ClusterIP
   selector:
-    app: nginx
+    app: nginx1
   ports:
     - name: myservice1
       protocol: TCP
-      port: 7070
-      targetPort: 70
+      port: 80
