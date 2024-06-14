@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: nginx3
-        image: nginx3
+        image: nginx
         ports: 
           - containerPort: 80
         volumeMounts:
