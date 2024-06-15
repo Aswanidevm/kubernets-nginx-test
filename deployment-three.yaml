@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: configmap-three
-  namespace: demo
+  namespace: namespace3
 data:
   index.html: |
     <html>
@@ -18,7 +18,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-three
-  namespace: demo
+  namespace: namespace3
 spec:
   replicas: 
   selector:
@@ -36,7 +36,7 @@ spec:
           - containerPort: 80
         volumeMounts:
         - name: config-3
-          mountPath: /usr/share/nginx/html/three
+          mountPath: /usr/share/nginx/html  #/three provide path for path mount
       volumes:
       - name: config-3
         configMap:
@@ -48,7 +48,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx3service
-  namespace: demo
+  namespace: namespace3
   labels :
     app: nginx3
 spec:

@@ -1,0 +1,66 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: nginx-route1
+  namespace: namespace1
+spec:
+  parentRefs:
+  - kind: Gateway
+    name: test-ext-reg-httpgw
+    namespace: default
+  hostnames:
+  - "one.nginxservice.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: nginx1service
+      port: 80
+
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: nginx-route2
+  namespace: namespace2
+spec:
+  parentRefs:
+  - kind: Gateway
+    name: test-ext-reg-httpgw
+    namespace: default
+  hostnames:
+  - "two.nginxservice.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: nginx2service
+      port: 80
+
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: nginx-route3
+  namespace: namespace3
+spec:
+  parentRefs:
+  - kind: Gateway
+    name: test-ext-reg-httpgw
+    namespace: default
+  hostnames:
+  - "three.nginxservice.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: nginx2service
+      port: 80
