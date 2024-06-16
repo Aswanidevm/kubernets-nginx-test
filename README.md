@@ -1,3 +1,4 @@
 Gateway API for External HTTP Traffic
 This repository contains the configuration for a Gateway API resource that exposes an external HTTP endpoint for your Kubernetes cluster.
 Once the Gateway is deployed, you can create HTTPRoute resources to define routing rules for incoming traffic. For example, you could create an HTTPRoute that routes traffic to a specific service based on the request path or headers.
+The httproute.yaml file is used to define routing rules for HTTP traffic within a Kubernetes cluster using the Gateway API. It specifies how incoming HTTP requests should be directed to different backend services based on various criteria like path, hostnames, and headers.
