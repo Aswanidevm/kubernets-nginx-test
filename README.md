@@ -1,0 +1,3 @@
+Gateway API for External HTTP Traffic
+This repository contains the configuration for a Gateway API resource that exposes an external HTTP endpoint for your Kubernetes cluster.
+Once the Gateway is deployed, you can create HTTPRoute resources to define routing rules for incoming traffic. For example, you could create an HTTPRoute that routes traffic to a specific service based on the request path or headers.
