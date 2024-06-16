@@ -62,5 +62,5 @@ spec:
         type: PathPrefix
         value: /
     backendRefs:
-    - name: nginx2service
+    - name: nginx3service
       port: 80
